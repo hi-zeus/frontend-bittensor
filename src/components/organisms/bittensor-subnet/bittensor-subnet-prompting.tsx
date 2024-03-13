@@ -11,7 +11,7 @@ type ConversationType = {
 }
 
 
-const BittensorSubnet = () => {
+const BittensorSubnetPrompting = () => {
     const inputRef = useRef<HTMLInputElement|null>(null);
     const [conversation, setConversation] = useState<ConversationType[]>([]);
     const [inputVal, setInputValue] = useState<string>('');
@@ -47,7 +47,7 @@ const BittensorSubnet = () => {
 
         setLoading(true);
 
-        const response = await fetch('/api/bittensor', {
+        const response = await fetch('/api/bittensor-prompting', {
             method: 'POST',
             body: JSON.stringify(data)
         });
@@ -112,5 +112,5 @@ const BittensorSubnet = () => {
 }
 
 
-export default BittensorSubnet;
+export default BittensorSubnetPrompting;
 
